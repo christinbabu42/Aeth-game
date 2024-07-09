@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Snake Game Tournament - Select Bet</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      color: white;
+      flex-direction: column;
+    }
+    .bet-button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Bet Amount</h1>
+  <input type="button" class="bet-button" value="10 rs" data-bet="10" />
+  <input type="button" class="bet-button" value="40 rs" data-bet="40" />
+  <input type="button" class="bet-button" value="80 rs" data-bet="80" />
+  <script>
+    document.querySelectorAll('.bet-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const bet = button.getAttribute('data-bet');
+        window.location.href = `/game?bet=${bet}`;
+      });
+    });
+  </script>
+</body>
+</html>
